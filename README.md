@@ -1,5 +1,3 @@
-# RegenBazaar-Litepaper v.1
-
 ## What is Regen Bazaar?
 ![Lending page](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/image_2025-01-23_11-02-50.png)
 
