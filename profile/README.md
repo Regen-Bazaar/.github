@@ -6,7 +6,7 @@ For NGOs and communities to tokenize their impact, and for investors and conscio
 
 🌐 [regenbazaar.com](https://www.regenbazaar.com) · 💬 [Telegram](https://t.me/regen_bazaar_bot) · 𝕏 [@RegenBazaar](https://x.com/RegenBazaar)
 
-![Regen Bazaar](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/image_2025-01-23_11-02-50.png)
+![Regen Bazaar](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/hero.png)
 
 ---
 
@@ -26,7 +26,7 @@ The goal is simple: make impact liquid, so capital can finally flow to the peopl
 
 Regen Bazaar lets NGOs tokenize real-world impact into Impact Products, backs each one with **digital Measurement, Reporting & Verification (dMRV)**, and lists them in an open marketplace where anyone can purchase, stake, or trade them.
 
-![How it works](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/image_2025-01-23_11-02-51.png)
+![How it works](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/how-it-works.png)
 
 ---
 
@@ -61,11 +61,11 @@ Regen Bazaar lets NGOs tokenize real-world impact into Impact Products, backs ea
 
 ## Mockups
 
-![NGO profile](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2012.png)
-![Tokenization](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%209.png)
-![Buyer profile](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2011.png)
-![Impact Products gallery](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2010.png)
-![Staking](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%207.png)
+![NGO profile](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/ngo-profile.png)
+![Tokenization](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/tokenization.png)
+![Buyer profile](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/buyer-profile.png)
+![Impact Products gallery](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/impact-products.png)
+![Staking](https://raw.githubusercontent.com/Regen-Bazaar/.github/main/profile/assets/staking.png)
 
 ---
 
