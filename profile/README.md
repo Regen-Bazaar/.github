@@ -22,7 +22,7 @@
   <img src="images/2-marketplace.png" width="820" alt="Regen Bazaar marketplace with tRWI cards">
 </p>
 
-> **Status:** public beta on testnets (Arbitrum Sepolia and Robinhood Chain testnet). No real funds, no production users yet.
+> **Status:** public beta on testnets: Arbitrum Sepolia and Robinhood Chain testnet in the app, plus Celo Sepolia, where Regen Bazaar started. No real funds, no production users yet.
 
 ## What it is
 
@@ -44,16 +44,13 @@ Regen Bazaar turns an NGO's impact report into **tRWI** (tokenized real-world im
 
 ## Networks and contracts
 
-One site, two networks: the visitor picks the network in the header. Core contracts share the same addresses on both chains and are source-verified.
+The same v3 contracts run on three testnets, all source-verified. The site currently offers Arbitrum Sepolia and Robinhood Chain testnet in its network switcher; Celo Sepolia is where the platform was first built and deployed.
 
-| Network | Payment | Explorer |
-|---|---|---|
-| Arbitrum Sepolia (421614) | tUSDG, a labelled testnet stand-in, while the Paxos USDG faucet is not dispensing there; Paxos USDG is already allowlisted | [RegenPrimarySale on Blockscout](https://arbitrum-sepolia.blockscout.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) |
-| Robinhood Chain testnet (46630) | Paxos USDG (testnet) | [RegenPrimarySale on Blockscout](https://explorer.testnet.chain.robinhood.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) |
-
-Example purchase, paid in Paxos USDG on Robinhood Chain testnet, split to the NGO in one transaction: [`0xea4a18d2…`](https://explorer.testnet.chain.robinhood.com/tx/0xea4a18d20c2fc3c4ed2a46ef7681129a99b905118745ff2de9ad95609ca2ba77)
-
-The same contracts are also deployed and source-verified on Celo Sepolia (not offered in the site's network switcher).
+| Network | Payment | Sale contract | Example purchase |
+|---|---|---|---|
+| Celo Sepolia (11142220) | CELO (native) | [`0x2b4A…98B2`](https://celo-sepolia.blockscout.com/address/0x2b4A3aE4E69771cdf2Fd4e2075A7B3Ab2e0498B2) | [`0xce901fd1…`](https://celo-sepolia.blockscout.com/tx/0xce901fd12fceb8f166ddd585f96b5baa1c91e64864608b1c0d5f869bd79b1273) |
+| Arbitrum Sepolia (421614) | tUSDG, a labelled testnet stand-in, while the Paxos USDG faucet is not dispensing there; Paxos USDG is already allowlisted | [`0x79E4…9030`](https://arbitrum-sepolia.blockscout.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) | see [deployments](https://github.com/Regen-Bazaar/regenbazaar-beta/blob/main/packages/contracts/deployments/arbitrum-sepolia.json) |
+| Robinhood Chain testnet (46630) | Paxos USDG (testnet) | [`0x79E4…9030`](https://explorer.testnet.chain.robinhood.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) | [`0xea4a18d2…`](https://explorer.testnet.chain.robinhood.com/tx/0xea4a18d20c2fc3c4ed2a46ef7681129a99b905118745ff2de9ad95609ca2ba77), 97.5% to the NGO in the same transaction |
 
 All addresses and proof transactions: [`packages/contracts/deployments`](https://github.com/Regen-Bazaar/regenbazaar-beta/tree/main/packages/contracts/deployments).
 
@@ -63,9 +60,16 @@ All addresses and proof transactions: [`packages/contracts/deployments`](https:/
 - **For AI agents and developers:** a public machine-readable catalogue at [`/api/impact`](https://app.regenbazaar.com/api/impact).
 - **With a wallet:** switch to either testnet, get test tokens (the in-app guide lists working faucets), press *Fund this impact*, then open *My impact*.
 
-## Where this comes from
+## How we got here
 
-Before Regen Bazaar, the same model ran as two single-organisation pilots: [Clean Phangan](https://cleanphangan.regenbazaar.com) (community beach cleanups, Koh Phangan) and [EcoThailand Foundation](https://ecothailand.regenbazaar.com) (mangrove restoration). Regen Bazaar generalises them into a multi-organisation marketplace.
+- **Before the platform:** two single-organisation pilots of the model: [Clean Phangan](https://cleanphangan.regenbazaar.com) (community beach cleanups on Koh Phangan, impact NFTs on Optimism) and [EcoThailand Foundation](https://ecothailand.regenbazaar.com) (mangrove restoration, on Celo).
+- **Jan to Feb 2025:** [Litepaper](https://github.com/Regen-Bazaar/Litepaper) and a first [demo MVP](https://github.com/Regen-Bazaar/Demo-Regen-Bazaar).
+- **Spring 2025:** contract prototypes on Stellar (Soroban), Starknet (Cairo) and Move; Gitcoin GG23 (OSS dApps and Apps round).
+- **May to Sep 2025:** Celo Proof of Ship, Season 4: EVM contracts deployed to Celo's Alfajores testnet and a Next.js frontend ([contracts-evm](https://github.com/Regen-Bazaar/contracts-evm), [dapp](https://github.com/Regen-Bazaar/dapp)).
+- **Jun 2026:** rebuilt from scratch as one monorepo on Celo Sepolia (Alfajores had been retired): Impact Value engine, EAS attestations, lazy-mint vouchers, three contract versions ending in the hardened v3, purchases through the app.
+- **Sep 2026:** Arbitrum Open House buildathon: the same v3 contracts on Arbitrum Sepolia and Robinhood Chain testnet, USDG checkout, one site with a network switcher, public beta.
+
+Repositories from 2025 are archived read-only and kept for the record.
 
 ## Roadmap
 
@@ -84,4 +88,4 @@ Full roadmap: [app.regenbazaar.com/roadmap](https://app.regenbazaar.com/roadmap)
 
 - [**regenbazaar-beta**](https://github.com/Regen-Bazaar/regenbazaar-beta): the app, contracts, Impact Value engine and indexer (active)
 - [**landing**](https://github.com/Regen-Bazaar/landing): [www.regenbazaar.com](https://www.regenbazaar.com)
-- Earlier prototypes (multi-chain contracts, first dApp, monorepo) are archived and kept read-only for history.
+- Earlier work (litepaper, demo MVP, Celo contracts, first dApp, Stellar, Cairo and Move prototypes) is archived and kept read-only.
