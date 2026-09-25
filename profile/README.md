@@ -22,7 +22,7 @@
   <img src="images/2-marketplace.png" width="820" alt="Regen Bazaar marketplace with tRWI cards">
 </p>
 
-> **Status:** public beta on testnets: Arbitrum Sepolia and Robinhood Chain testnet in the app, plus Celo Sepolia, where Regen Bazaar started. No real funds, no production users yet.
+> **Status:** public beta on three testnets, all in the app's network switcher: Arbitrum Sepolia, Robinhood Chain testnet and Celo Sepolia, where Regen Bazaar started. No real funds, no production users yet.
 
 ## What it is
 
@@ -44,7 +44,7 @@ Regen Bazaar turns an NGO's impact report into **tRWI** (tokenized real-world im
 
 ## Networks and contracts
 
-The same v3 contracts run on three testnets, all source-verified. The site currently offers Arbitrum Sepolia and Robinhood Chain testnet in its network switcher; Celo Sepolia is where the platform was first built and deployed.
+The same v3 contracts run on three testnets, all source-verified, and the site's network switcher offers all three. Celo Sepolia is where the platform was first built and deployed. Each impact report is listed on one network only, the one chosen when it was submitted, so the same impact is never sold twice.
 
 | Network | Payment | Sale contract | Example purchase |
 |---|---|---|---|
@@ -75,7 +75,7 @@ Repositories from 2025 are archived read-only and kept for the record.
 
 Ordered by priority, no dates. Phases 2 and 3 are the ones we would take on with grant funding.
 
-1. **Public beta and feedback** (now): open testing on both testnets, fix every step where testers get stuck.
+1. **Public beta and feedback** (now): open testing on all three testnets, fix every step where testers get stuck.
 2. **Trust: methodology and verification**: expert-calibrated weights, physical units, required evidence, duplicate and cross-registry checks, revocation.
 3. **Organisations: onboarding without crypto**: email or Telegram sign-in, organisation profiles, teams, payouts for NGOs new to crypto.
 4. **Funders, companies and AI agents**: card and gasless checkout, impact certificates, company portal, documented agent API.
