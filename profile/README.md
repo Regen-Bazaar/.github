@@ -12,7 +12,7 @@
   <a href="https://app.regenbazaar.com"><b>Try the beta</b></a> ·
   <a href="https://github.com/Regen-Bazaar/regenbazaar-beta">Source</a> ·
   <a href="https://github.com/Regen-Bazaar/regenbazaar-beta/blob/main/docs/ARCHITECTURE.md">How it works</a> ·
-  <a href="https://github.com/Regen-Bazaar/regenbazaar-beta/blob/main/docs/ROADMAP.md">Roadmap</a> ·
+  <a href="https://app.regenbazaar.com/roadmap">Roadmap</a> ·
   <a href="https://www.regenbazaar.com">Website</a> ·
   <a href="https://x.com/RegenBazaar">X</a> ·
   <a href="https://t.me/regen_bazaar">Telegram</a>
@@ -69,13 +69,16 @@ Before Regen Bazaar, the same model ran as two single-organisation pilots: [Clea
 
 ## Roadmap
 
-- **Now:** public testing with the community.
-- **Next, trust:** calibrate Impact Value weights with domain experts; geotagged evidence; duplicate and cross-registry checks; revocation flow.
-- **Next, NGOs:** organisation profiles and team roles; email or Telegram sign-in with an embedded wallet.
-- **Next, funders:** mobile wallets, gasless checkout, card on-ramp, shareable impact certificates.
-- **Before mainnet:** external security audit, multisig with timelock, legal review.
+Ordered by priority, no dates. Phases 2 and 3 are the ones we would take on with grant funding.
 
-Full list: [ROADMAP.md](https://github.com/Regen-Bazaar/regenbazaar-beta/blob/main/docs/ROADMAP.md)
+1. **Public beta and feedback** (now): open testing on both testnets, fix every step where testers get stuck.
+2. **Trust: methodology and verification**: expert-calibrated weights, physical units, required evidence, duplicate and cross-registry checks, revocation.
+3. **Organisations: onboarding without crypto**: email or Telegram sign-in, organisation profiles, teams, payouts for NGOs new to crypto.
+4. **Funders, companies and AI agents**: card and gasless checkout, impact certificates, company portal, documented agent API.
+5. **Validator network and community**: open task pool, public track records, disputes.
+6. **Mainnet**: external audit, multisig with timelock, legal review, launch with pilot partners.
+
+Full roadmap: [app.regenbazaar.com/roadmap](https://app.regenbazaar.com/roadmap)
 
 ## Repositories
 
