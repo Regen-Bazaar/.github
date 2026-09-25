@@ -1,124 +1,87 @@
-# Regen Bazaar
+<p align="center">
+  <img src="images/logo-512.png" width="96" alt="Regen Bazaar logo">
+</p>
 
-**We turn verified real-world impact into a tradable asset class.**
+<h1 align="center">Regen Bazaar</h1>
 
-For NGOs and communities to tokenize their impact, and for investors and conscious buyers to fund it.
+<p align="center">
+  <b>Fund verified real-world impact on-chain, paid in USDG, with provenance anyone can check.</b>
+</p>
 
-🌐 [regenbazaar.com](https://www.regenbazaar.com) · 💬 [Telegram](https://t.me/regen_bazaar_bot) · 𝕏 [@RegenBazaar](https://x.com/RegenBazaar)
+<p align="center">
+  <a href="https://app.regenbazaar.com"><b>Try the beta</b></a> ·
+  <a href="https://github.com/Regen-Bazaar/regenbazaar-beta">Source</a> ·
+  <a href="https://github.com/Regen-Bazaar/regenbazaar-beta/blob/main/docs/ARCHITECTURE.md">How it works</a> ·
+  <a href="https://app.regenbazaar.com/roadmap">Roadmap</a> ·
+  <a href="https://www.regenbazaar.com">Website</a> ·
+  <a href="https://x.com/RegenBazaar">X</a> ·
+  <a href="https://t.me/regen_bazaar">Telegram</a>
+</p>
 
-![Regen Bazaar](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/image_2025-01-23_11-02-50.png)
+<p align="center">
+  <img src="images/2-marketplace.png" width="820" alt="Regen Bazaar marketplace with tRWI cards">
+</p>
 
----
+> **Status:** public beta on testnets (Arbitrum Sepolia and Robinhood Chain testnet). No real funds, no production users yet.
 
-## What is Regen Bazaar?
+## What it is
 
-Regen Bazaar is a marketplace for **Tokenized Real-World Impact (tRWI)**. NGOs and communities take the impact they already create, such as cleanups, reforestation, conservation, animal care, and education, and turn it into **Impact Products**: verifiable, ownable, tradable on-chain assets. Buyers and investors fund that impact directly, earn **$REBAZ** rewards, and grow their Real-World Impact Rank.
+Small NGOs and community groups do measurable good: reforestation, cleanups, animal rescue, education. They rarely have a way to turn that work into something a funder can buy, hold and verify.
 
-The goal is simple: make impact liquid, so capital can finally flow to the people doing the work.
+Regen Bazaar turns an NGO's impact report into **tRWI** (tokenized real-world impact): fractional ERC-1155 editions backed by an on-chain attestation. Funders pay in **USDG**, and the NGO is paid in the same transaction.
 
-## The problem
+## How it works
 
-- **Funding is broken at the point of trust.** Trillions are earmarked for impact, but verification is slow, manual, and opaque, so capital can't move.
-- **NGOs can't scale.** Most stay donation-dependent, with no way to monetize the impact they've already delivered.
-- **Buyers want proof.** ESG-conscious capital wants verifiable impact *and* upside, not phantom credits.
+1. **Report.** An NGO describes its impact in plain language. An LLM extracts the actions and numbers; it never scores.
+2. **Score.** A deterministic, versioned formula computes the Impact Value. Weights are v0.1, published at [`/methodology`](https://app.regenbazaar.com/methodology), platform-assessed, not third-party certified.
+3. **Verify.** A human validator approves. Metadata is pinned to IPFS and the claim is attested on-chain with EAS.
+4. **Fund.** A funder buys editions in USDG. The token is lazily minted at purchase from a platform-signed voucher; 97.5% goes straight to the NGO wallet, 2.5% is the platform fee.
+5. **Hold or retire.** Editions show up on the funder's **My impact** page and can be retired to claim the impact permanently.
 
-## Our solution
+| Home | On-chain proof | Submit impact |
+|---|---|---|
+| ![Home](images/1-home.png) | ![Project page with on-chain proof](images/3-proof.png) | ![Impact submission form](images/4-tokenize.png) |
 
-Regen Bazaar lets NGOs tokenize real-world impact into Impact Products, backs each one with **digital Measurement, Reporting & Verification (dMRV)**, and lists them in an open marketplace where anyone can purchase, stake, or trade them.
+## Networks and contracts
 
-![How it works](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/image_2025-01-23_11-02-51.png)
+One site, two networks: the visitor picks the network in the header. Core contracts share the same addresses on both chains and are source-verified.
 
----
+| Network | Payment | Explorer |
+|---|---|---|
+| Arbitrum Sepolia (421614) | tUSDG, a labelled testnet stand-in, while the Paxos USDG faucet is not dispensing there; Paxos USDG is already allowlisted | [RegenPrimarySale on Blockscout](https://arbitrum-sepolia.blockscout.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) |
+| Robinhood Chain testnet (46630) | Paxos USDG (testnet) | [RegenPrimarySale on Blockscout](https://explorer.testnet.chain.robinhood.com/address/0x79E4bEAF41F415cE3DF55DaDe3F86423e5399030) |
 
-## How does it work?
+Example purchase, paid in Paxos USDG on Robinhood Chain testnet, split to the NGO in one transaction: [`0xea4a18d2…`](https://explorer.testnet.chain.robinhood.com/tx/0xea4a18d20c2fc3c4ed2a46ef7681129a99b905118745ff2de9ad95609ca2ba77)
 
-1. **Tokenize**: NGOs and communities submit real-world impact data; activities are minted as on-chain Impact Products.
-2. **Verify (dMRV)**: Impact is evaluated through a transparent, scientifically grounded framework (impact category, beneficiary multiplier, action-based weight, time-based value) and community validation.
-3. **List**: Verified Impact Products go live in the marketplace for anyone to discover.
-4. **Trade & Stake**: Buyers purchase, stake, and resell Impact Products, earning $REBAZ rewards and a rising Real-World Impact Rank.
+The same contracts are also deployed and source-verified on Celo Sepolia (not offered in the site's network switcher).
 
-### Verification & community validators
-- **Open staking**: validators lock $REBAZ to participate, ensuring accountability.
-- **Public-evidence task pool**: validators review publicly available posts, reports, and data behind each impact claim.
-- **High consensus bar**: strong validator agreement required to approve.
-- **Slashing**: penalizes fraudulent or negligent approvals.
-- **Reputation-based rewards**: quality and consistency are incentivized.
-- **Dispute resolution**: a review mechanism protects NGOs and communities.
+All addresses and proof transactions: [`packages/contracts/deployments`](https://github.com/Regen-Bazaar/regenbazaar-beta/tree/main/packages/contracts/deployments).
 
----
+## Try it
 
-## Core concepts
+- **Without a wallet:** browse the [marketplace](https://app.regenbazaar.com) and open any project to see its attestation and transactions.
+- **For AI agents and developers:** a public machine-readable catalogue at [`/api/impact`](https://app.regenbazaar.com/api/impact).
+- **With a wallet:** switch to either testnet, get test tokens (the in-app guide lists working faucets), press *Fund this impact*, then open *My impact*.
 
-| Term | Meaning |
-|------|---------|
-| **tRWI** | Tokenized Real-World Impact: measured environmental or social impact, minted on-chain |
-| **Impact Product** | A verifiable, ownable, tradable on-chain asset representing real-world impact |
-| **dMRV** | Digital Measurement, Reporting & Verification: the audit trail behind every Impact Product |
-| **$REBAZ** | Utility token: governance, staking rewards, impact lending, liquidity, quadratic funding |
-| **RWI Rank** | Real-World Impact Rank: recognition that grows as you fund and verify impact |
+## Where this comes from
 
----
-
-## Mockups
-
-![NGO profile](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2012.png)
-![Tokenization](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%209.png)
-![Buyer profile](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2011.png)
-![Impact Products gallery](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%2010.png)
-![Staking](https://turquoise-obvious-guanaco-391.mypinata.cloud/ipfs/bafybeigsuuox2ncs5orcpfnsnql6immhqho2ltrgycturjw2g4zbnge66u/Frame%207.png)
-
----
-
-## Why Regen Bazaar?
-
-**For NGOs & communities**
-- Turn impact you've already delivered into ongoing revenue.
-- Reach a global audience of impact-aligned buyers and investors.
-- Transparency and accountability that builds funder trust.
-
-**For buyers**
-- Fund causes you care about and earn $REBAZ while doing it.
-- Verifiable, transparent impact, not phantom credits.
-- Recognition and privileges through a rising RWI Rank.
-
-**For investors**
-- Early access to a liquid market for real-world impact.
-- Returns aligned with measurable, verified outcomes.
-- Exposure to the fast-growing impact and ReFi economy.
-
-## Market
-
-- **$1.57T** in impact-investing assets under management (GIIN, 2024).
-- **$50B+** projected voluntary carbon market by 2030.
-- A widening gap between capital that *wants* to fund impact and infrastructure that can *verify* it: the gap Regen Bazaar closes.
+Before Regen Bazaar, the same model ran as two single-organisation pilots: [Clean Phangan](https://cleanphangan.regenbazaar.com) (community beach cleanups, Koh Phangan) and [EcoThailand Foundation](https://ecothailand.regenbazaar.com) (mangrove restoration). Regen Bazaar generalises them into a multi-organisation marketplace.
 
 ## Roadmap
 
-**Phase 1: Foundation**
-NGO onboarding, manual tokenization, the marketplace, and $REBAZ staking.
+Ordered by priority, no dates. Phases 2 and 3 are the ones we would take on with grant funding.
 
-**Phase 2: Verification & reputation**
-dMRV-backed verification, community validators, and the Real-World Impact Rank.
+1. **Public beta and feedback** (now): open testing on both testnets, fix every step where testers get stuck.
+2. **Trust: methodology and verification**: expert-calibrated weights, physical units, required evidence, duplicate and cross-registry checks, revocation.
+3. **Organisations: onboarding without crypto**: email or Telegram sign-in, organisation profiles, teams, payouts for NGOs new to crypto.
+4. **Funders, companies and AI agents**: card and gasless checkout, impact certificates, company portal, documented agent API.
+5. **Validator network and community**: open task pool, public track records, disputes.
+6. **Mainnet**: external audit, multisig with timelock, legal review, launch with pilot partners.
 
-**Phase 3: Ecosystem**
-On-chain governance, quarterly quadratic-funding rounds, and outcome-based impact lending.
+Full roadmap: [app.regenbazaar.com/roadmap](https://app.regenbazaar.com/roadmap)
 
----
+## Repositories
 
-## Ecosystem & supporters
-
-Building alongside the public-goods and ReFi ecosystem, including Celo, Gitcoin, Arbitrum, Giveth, Meta Pool, and Octant.
-
-## Explore our repos
-
-- [**landing**](https://github.com/Regen-Bazaar/landing): marketing site ([regenbazaar.com](https://www.regenbazaar.com))
-- [**dapp**](https://github.com/Regen-Bazaar/dapp): the Regen Bazaar application frontend
-- [**backend**](https://github.com/Regen-Bazaar/backend): API & services
-- [**contracts-evm**](https://github.com/Regen-Bazaar/contracts-evm): EVM smart contracts
-- Multi-chain contracts: [Stellar/Soroban](https://github.com/Regen-Bazaar/contracts-stellar), [Cairo](https://github.com/Regen-Bazaar/contracts-cairo), [Move](https://github.com/Regen-Bazaar/contracts-move)
-
----
-
-**Join us.** Whether you're an NGO, a buyer, or an investor, your participation helps build a more regenerative future where doing good is verifiable, fundable, and rewarded.
-
-🌐 [regenbazaar.com](https://www.regenbazaar.com)
+- [**regenbazaar-beta**](https://github.com/Regen-Bazaar/regenbazaar-beta): the app, contracts, Impact Value engine and indexer (active)
+- [**landing**](https://github.com/Regen-Bazaar/landing): [www.regenbazaar.com](https://www.regenbazaar.com)
+- Earlier prototypes (multi-chain contracts, first dApp, monorepo) are archived and kept read-only for history.
